@@ -1,0 +1,55 @@
+{
+  "name": "nodejs-sample",
+  "version": "1.0.0",
+  "description": "Simple REST app for Node.js skill demonstration",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FreshcodeIT/nodejs-sample.git"
+  },
+  "dependencies": {
+    "express": "^4.16.3",
+    "raw-body": "^2.3.3"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^9.0.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-flow": "^6.23.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "eslint": "^4.19.1",
+    "eslint-config-prettier": "^3.0.1",
+    "eslint-plugin-flowtype": "^2.50.1",
+    "eslint-plugin-prettier": "^2.6.2",
+    "flow-bin": "^0.81.0",
+    "husky": "^1.1.2",
+    "jsinspect": "^0.12.7",
+    "lint-staged": "^7.3.0",
+    "nodemon": "^1.18.9",
+    "prettier": "^1.15.2",
+    "prettier-check": "^2.0.0",
+    "sass": "^1.14.1"
+  },
+  "scripts": {
+    "start": "npx babel-node server/index.js",
+    "dev:start": "nodemon server/index.js --exec babel-node",
+    "check": "./check.sh"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,json,css,md,jsx}": [
+      "npx prettier --write",
+      "git add"
+    ],
+    "*.{js,jsx}": [
+      "npx eslint --fix",
+      "git add"
+    ]
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,14 @@
+[ignore]
+.*/server/.*
+.*/rules/.*
+
+[include]
+
+[libs]
+
+[lints]
+
+[options]
+module.name_mapper='^.*\.s?css$' -> 'css-module-flow'
+
+[strict]
